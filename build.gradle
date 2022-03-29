@@ -31,7 +31,16 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    // 스프링 부트용 Spring Data Jpa 추상화 라이브러리
+    // 스프링 부트 버전에 맞춰 자동으로 Jpa 관련 라이브러리들의 버전을 관리해줌
+
+    // 인메모리 관계형 데이터베이스
+    // 별도 설치 필요 없이 프로젝트 의존성만으로 관리할 수 있음
+    // 메모리에서 실행. 애플리케이션을 재시작할 때마다 초기화됨. 그래서 테스트 용도로 많이 사용
+    implementation 'com.h2database:h2'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+    annotationProcessor 'com.h2database:h2'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
