@@ -10,7 +10,7 @@ cp $REPOSITORY/zip/*.jar $REPOSITORY/
 echo "> Check the pid of the currently running application"
 
 #CURRENT_PID=$(pgrep -fl pt-springboot | grep jar | awk '{print $1}')
-CURRENT_PID=lsof -t -i :8080
+CURRENT_PID=$(lsof -t -i :8080)
 
 echo "> pid of the currently running application: $CURRENT_PID"
 
